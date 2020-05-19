@@ -22,19 +22,22 @@ base$cantp = base$`En marzo, ¿Cuantas personas vivian con usted?`
 baseaux = subset.data.frame(base, base$`¿Desea participar en EL sorteo?`=="Sí")
 
 #Miremos las variables sobre persepción probabilidad de vias de contagio
-hist(base$perrap, main = "Contagios por Rappi", col = rainbow(10), xlab = "Persepcion sobre la probabilidad de constagio",ylab = "Frecuencia")
+hist(base$perrap, main = "Contagios por Rappi", col = rainbow(10), xlab = "Percepcion sobre la probabilidad de contagio",ylab = "Frecuencia")
 plot(density(base$perrap))
-hist(base$permer,main = "Contagios por ir a un mercado", col = rainbow(10), xlab = "Persepcion sobre la probabilidad de constagio",ylab = "Frecuencia")
+hist(base$permer,main = "Contagios por ir a un mercado", col = rainbow(10), xlab = "Percepcion sobre la probabilidad de contagio",ylab = "Frecuencia")
 plot(density(base$permer))
 ad.test(base$perrap) 
 ad.test(base$permer)
 
-hist(baseaux$perrap, main = "Contagios por Rappi", col = rainbow(10), xlab = "Persepcion sobre la probabilidad de constagio",ylab = "Frecuencia")
+hist(baseaux$perrap, main = "Contagios por Rappi", col = rainbow(10), xlab = "Percepcion sobre la probabilidad de contagio",ylab = "Frecuencia")
 plot(density(baseaux$perrap))
-hist(baseaux$permer,main = "Contagios por ir a un mercado", col = rainbow(10), xlab = "Persepcion sobre la probabilidad de constagio",ylab = "Frecuencia")
+hist(baseaux$permer,main = "Contagios por ir a un mercado", col = rainbow(10), xlab = "Percepcion sobre la probabilidad de contagio",ylab = "Frecuencia")
 plot(density(baseaux$permer))
 ad.test(baseaux$perrap) 
 ad.test(baseaux$permer)
+
+mean(base$crapp)
+mean(baseaux$crapp)
 
 #Modelos
 modelo = lm(crapp~ consi + supercerc + cantp ,data = base)
